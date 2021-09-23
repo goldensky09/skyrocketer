@@ -3,9 +3,9 @@
 Material Dashboard - v2.1.2
 =========================================================
 
-Product Page: https://www.creative-tim.com/product/material-dashboard
-Copyright 2020 Creative Tim (https://www.creative-tim.com)
-Coded by Creative Tim
+Product Page:
+Copyright 2020 team Avengers
+Coded by team Avengers
 
 =========================================================
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
@@ -18,7 +18,7 @@ The above copyright notice and this permission notice shall be included in all c
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Material Dashboard by Creative Tim
+    Material Dashboard by team Avengers
   </title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -28,84 +28,19 @@ The above copyright notice and this permission notice shall be included in all c
   <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="../assets/demo/tables.css" rel="stylesheet" />
 </head>
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+    <div dx-include-html="sidebar.html"></div>
 
-        Tip 2: you can also add an image using data-image tag
-    -->
-      <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
-        </a></div>
-      <div class="sidebar-wrapper">
-        <ul class="nav">
-          <li class="nav-item  ">
-            <a class="nav-link" href="./dashboard.html">
-              <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./user.html">
-              <i class="material-icons">person</i>
-              <p>User Profile</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
-              <i class="material-icons">content_paste</i>
-              <p>Table List</p>
-            </a>
-          </li>
-          <li class="nav-item active ">
-            <a class="nav-link" href="./typography.html">
-              <i class="material-icons">library_books</i>
-              <p>Typography</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
-              <i class="material-icons">bubble_chart</i>
-              <p>Icons</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
-              <i class="material-icons">location_ons</i>
-              <p>Maps</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
-              <i class="material-icons">notifications</i>
-              <p>Notifications</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
-              <i class="material-icons">language</i>
-              <p>RTL Support</p>
-            </a>
-          </li>
-          <li class="nav-item active-pro ">
-            <a class="nav-link" href="./upgrade.html">
-              <i class="material-icons">unarchive</i>
-              <p>Upgrade to PRO</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
     <div class="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Typography</a>
+            <!-- <a class="navbar-brand" href="javascript:;">Table List</a> -->
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -141,9 +76,9 @@ The above copyright notice and this permission notice shall be included in all c
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
+                  <a class="dropdown-item" href="#">Notification</a>
                   <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+                  <a class="dropdown-item" href="#">Another Notification</a>
                   <a class="dropdown-item" href="#">Another Notification</a>
                   <a class="dropdown-item" href="#">Another One</a>
                 </div>
@@ -169,96 +104,162 @@ The above copyright notice and this permission notice shall be included in all c
       <!-- End Navbar -->
       <div class="content">
         <div class="container-fluid">
-          <div class="card">
-            <div class="card-header card-header-primary">
-              <h4 class="card-title">Material Dashboard Heading</h4>
-              <p class="card-category">Created using Roboto Font Family</p>
-            </div>
-            <div class="card-body">
-              <div id="typography">
-                <div class="card-title">
-                  <h2>Typography</h2>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Engine Setup</h4>
+                  <p class="card-category">Setup a VM in very few steps</p>
                 </div>
-                <div class="row">
-                  <div class="tim-typo">
-                    <h1>
-                      <span class="tim-note">Header 1</span>The Life of Material Dashboard </h1>
+                <div class="card-body">
+                  <div class="bs-vertical-wizard">
+                    <ul>
+                        <li class="current">
+                            <a href="#">Select VM <i class="ico fa fa-check ico-green"></i>
+                                <span class="desc">Use either existing VM or create new</span>
+                            </a>
+                        </li>
+
+                        <li class="locked">
+                          <!-- complete prev-step"> -->
+                            <a href="#">Create New VM <i class="ico fa fa-check ico-green"></i>
+                                <span class="desc">Quickly create a VM.</span>
+                            </a>
+                        </li>
+                        <li class="locked">
+                            <a href="#">Select Operating System
+                                <span class="desc">Select OS you want the engine to be hosted on.</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="card card-profile">
+                <div class="card-body">
+                  <div class="card card-plain">
+                    <div class="card-header card-header-primary">
+                      <h4 class="card-title mt-0"> Create New VM</h4>
+                      <p class="card-category"> Create a fresh VM quickly</p>
+                    </div>
+                    <div class="card-body">
+                      <div class="table-responsive">
+                        <button class="btn btn-success btn-round btn-lg">
+                          <i class="material-icons">settings</i> Create
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                  <div class="tim-typo">
-                    <h2>
-                      <span class="tim-note">Header 2</span>The Life of Material Dashboard</h2>
+                  <h2 class="card-category text-gray">OR</h2>
+                  <br>
+                  <br>
+                  <div class="card-header card-header-primary">
+                    <h4 class="card-title ">Use Existing VMs</h4>
+                    <p class="card-category"> Utilize the existing VMs available to you and save some cost to company :)</p>
+                    <form class="navbar-form">
+                      <div class="input-group no-border">
+                        <input type="text" value="" class="form-control" placeholder="Search...">
+                        <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                          <i class="material-icons">search</i>
+                          <div class="ripple-container"></div>
+                        </button>
+                      </div>
+                    </form>
                   </div>
-                  <div class="tim-typo">
-                    <h3>
-                      <span class="tim-note">Header 3</span>The Life of Material Dashboard</h3>
-                  </div>
-                  <div class="tim-typo">
-                    <h4>
-                      <span class="tim-note">Header 4</span>The Life of Material Dashboard</h4>
-                  </div>
-                  <div class="tim-typo">
-                    <h5>
-                      <span class="tim-note">Header 5</span>The Life of Material Dashboard</h5>
-                  </div>
-                  <div class="tim-typo">
-                    <h6>
-                      <span class="tim-note">Header 6</span>The Life of Material Dashboard</h6>
-                  </div>
-                  <div class="tim-typo">
-                    <p>
-                      <span class="tim-note">Paragraph</span>
-                      I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.</p>
-                  </div>
-                  <div class="tim-typo">
-                    <span class="tim-note">Quote</span>
-                    <blockquote class="blockquote">
-                      <p>
-                        I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.
-                      </p>
-                      <small>
-                        Kanye West, Musician
-                      </small>
-                    </blockquote>
-                  </div>
-                  <div class="tim-typo">
-                    <span class="tim-note">Muted Text</span>
-                    <p class="text-muted">
-                      I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...
-                    </p>
-                  </div>
-                  <div class="tim-typo">
-                    <span class="tim-note">Primary Text</span>
-                    <p class="text-primary">
-                      I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                  </div>
-                  <div class="tim-typo">
-                    <span class="tim-note">Info Text</span>
-                    <p class="text-info">
-                      I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                  </div>
-                  <div class="tim-typo">
-                    <span class="tim-note">Success Text</span>
-                    <p class="text-success">
-                      I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                  </div>
-                  <div class="tim-typo">
-                    <span class="tim-note">Warning Text</span>
-                    <p class="text-warning">
-                      I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...
-                    </p>
-                  </div>
-                  <div class="tim-typo">
-                    <span class="tim-note">Danger Text</span>
-                    <p class="text-danger">
-                      I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                  </div>
-                  <div class="tim-typo">
-                    <h2>
-                      <span class="tim-note">Small Tag</span>
-                      Header with small subtitle
-                      <br>
-                      <small>Use "small" tag for the headers</small>
-                    </h2>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead class=" text-primary">
+                          <th>
+                            #
+                          </th>
+                          <th>
+                            VM Name
+                          </th>
+                          <th>
+                            Operatin System
+                          </th>
+                          <th>
+                            Domain
+                          </th>
+                          <th>
+                            Action
+                          </th>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              1
+                            </td>
+                            <td>
+                              jk-trunk
+                            </td>
+                            <td>
+                              Linux(Red Hat)
+                            </td>
+                            <td>
+                              Dcol1
+                            </td>
+                            <td class="text-primary">
+                              <button type="button" class="btn btn-info">Use VM</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              2
+                            </td>
+                            <td>
+                              vk-trunk
+                            </td>
+                            <td>
+                              Windows
+                            </td>
+                            <td>
+                              Dlpxdc
+                            </td>
+                            <td class="text-primary">
+                              <button type="button" class="btn btn-info">Use VM</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              3
+                            </td>
+                            <td>
+                              sj-trunk
+                            </td>
+                            <td>
+                              Ubuntu
+                            </td>
+                            <td>
+                              Dcol2
+                            </td>
+                            <td class="text-primary">
+                              <button type="button" class="btn btn-info">Use VM</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              4
+                            </td>
+                            <td>
+                              dj-trunk
+                            </td>
+                            <td>
+                              CentOS
+                            </td>
+                            <td>
+                              Dcol1
+                            </td>
+                            <td class="text-primary">
+                              <button type="button" class="btn btn-info">Use VM</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -271,22 +272,22 @@ The above copyright notice and this permission notice shall be included in all c
           <nav class="float-left">
             <ul>
               <li>
-                <a href="https://www.creative-tim.com">
-                  Creative Tim
+                <a href="javascript:;">
+                  team Avengers
                 </a>
               </li>
               <li>
-                <a href="https://creative-tim.com/presentation">
+                <a href="javascript:;">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="http://blog.creative-tim.com">
+                <a href="javascript:;">
                   Blog
                 </a>
               </li>
               <li>
-                <a href="https://www.creative-tim.com/license">
+                <a href="javascript:;">
                   Licenses
                 </a>
               </li>
@@ -297,7 +298,7 @@ The above copyright notice and this permission notice shall be included in all c
             <script>
               document.write(new Date().getFullYear())
             </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+            <a href="javascript:;" target="_blank">team Avengers</a> for a better web.
           </div>
         </div>
       </footer>
@@ -345,21 +346,21 @@ The above copyright notice and this permission notice shall be included in all c
           </a>
         </li>
         <li class="button-container">
-          <a href="https://www.creative-tim.com/product/material-dashboard" target="_blank" class="btn btn-primary btn-block">Free Download</a>
+          <a href="" target="_blank" class="btn btn-primary btn-block">Free Download</a>
         </li>
         <!-- <li class="header-title">Want more components?</li>
             <li class="button-container">
-                <a href="https://www.creative-tim.com/product/material-dashboard-pro" target="_blank" class="btn btn-warning btn-block">
+                <a href="-pro" target="_blank" class="btn btn-warning btn-block">
                   Get the pro version
                 </a>
             </li> -->
         <li class="button-container">
-          <a href="https://demos.creative-tim.com/material-dashboard/docs/2.1/getting-started/introduction.html" target="_blank" class="btn btn-default btn-block">
+          <a href="javascript:;" target="_blank" class="btn btn-default btn-block">
             View Documentation
           </a>
         </li>
         <li class="button-container github-star">
-          <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
+          <a class="github-button" href="javascript:;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
         </li>
         <li class="header-title">Thank you for 95 shares!</li>
         <li class="button-container text-center">
@@ -413,10 +414,12 @@ The above copyright notice and this permission notice shall be included in all c
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+  <script src="../assets/js/includeHTML.js"></script>
   <script src="../assets/demo/demo.js"></script>
   <script>
     $(document).ready(function() {
       $().ready(function() {
+        includeHTML();
         $sidebar = $('.sidebar');
 
         $sidebar_img_container = $sidebar.find('.sidebar-background');
@@ -583,6 +586,72 @@ The above copyright notice and this permission notice shall be included in all c
 
         });
       });
+
+    // Step Wizard Code
+    var current_fs, next_fs, previous_fs; //fieldsets
+    var opacity;
+
+    $(".next").click(function(){
+
+    current_fs = $(this).parent();
+    next_fs = $(this).parent().next();
+
+    //Add Class Active
+    $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+    //show the next fieldset
+    next_fs.show();
+    //hide the current fieldset with style
+    current_fs.animate({opacity: 0}, {
+    step: function(now) {
+    // for making fielset appear animation
+    opacity = 1 - now;
+
+    current_fs.css({
+    'display': 'none',
+    'position': 'relative'
+    });
+    next_fs.css({'opacity': opacity});
+    },
+    duration: 600
+    });
+    });
+
+    $(".previous").click(function(){
+
+    current_fs = $(this).parent();
+    previous_fs = $(this).parent().prev();
+
+    //Remove class active
+    $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+    //show the previous fieldset
+    previous_fs.show();
+
+    //hide the current fieldset with style
+    current_fs.animate({opacity: 0}, {
+    step: function(now) {
+    // for making fielset appear animation
+    opacity = 1 - now;
+
+    current_fs.css({
+    'display': 'none',
+    'position': 'relative'
+    });
+    previous_fs.css({'opacity': opacity});
+    },
+    duration: 600
+    });
+    });
+
+    $('.radio-group .radio').click(function(){
+    $(this).parent().find('.radio').removeClass('selected');
+    $(this).addClass('selected');
+    });
+
+    $(".submit").click(function(){
+    return false;
+    })
     });
   </script>
 </body>

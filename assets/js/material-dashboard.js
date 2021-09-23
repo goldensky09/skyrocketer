@@ -1,19 +1,3 @@
-/*!
-
- =========================================================
- * Material Dashboard - v2.1.2
- =========================================================
-
- * Product Page: https://www.creative-tim.com/product/material-dashboard
- * Copyright 2020 Creative Tim (http://www.creative-tim.com)
-
- * Designed by www.invisionapp.com Coded by www.creative-tim.com
-
- =========================================================
-
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
- */
 
 (function() {
   isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
@@ -199,7 +183,7 @@ md = {
           tension: 0
         }),
         low: 0,
-        high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+        high: 50, // team Avengers: we recommend you to set the high sa the biggest value + something for a better look
         chartPadding: {
           top: 0,
           right: 0,
@@ -326,7 +310,7 @@ md = {
           tension: 0
         }),
         low: 0,
-        high: 15, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+        high: 15, // team Avengers: we recommend you to set the high sa the biggest value + something for a better look
         chartPadding: {
           top: 0,
           right: 0,
@@ -355,7 +339,7 @@ md = {
           tension: 0
         }),
         low: 0,
-        high: 8, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+        high: 8, // team Avengers: we recommend you to set the high sa the biggest value + something for a better look
         chartPadding: {
           top: 0,
           right: 0,
@@ -656,20 +640,6 @@ md = {
           end: new Date(y, m, d + 1, 22, 30),
           allDay: false,
           className: 'event-azure'
-        },
-        {
-          title: 'Click for Creative Tim',
-          start: new Date(y, m, 21),
-          end: new Date(y, m, 22),
-          url: 'http://www.creative-tim.com/',
-          className: 'event-orange'
-        },
-        {
-          title: 'Click for Google',
-          start: new Date(y, m, 21),
-          end: new Date(y, m, 22),
-          url: 'http://www.creative-tim.com/',
-          className: 'event-orange'
         }
       ]
     });
