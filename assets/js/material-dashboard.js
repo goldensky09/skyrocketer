@@ -315,7 +315,9 @@ md = {
       dataDailySalesChart = {
         labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
         series: [
-          [12, 17, 7, 17, 23, 18, 38]
+          [12, 9, 7, 8, 5, 12, 9],
+          [2, 1, 3.5, 7, 3, 5, 7],
+          [1, 9, 4, 8, 6, 4, 9]
         ]
       };
 
@@ -324,7 +326,7 @@ md = {
           tension: 0
         }),
         low: 0,
-        high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+        high: 15, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
         chartPadding: {
           top: 0,
           right: 0,
@@ -342,9 +344,9 @@ md = {
       /* ----------==========     Completed Tasks Chart initialization    ==========---------- */
 
       dataCompletedTasksChart = {
-        labels: ['12p', '3p', '6p', '9p', '12p', '3a', '6a', '9a'],
+        labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
         series: [
-          [230, 750, 450, 300, 280, 240, 200, 190]
+          [7, 2, 6, 4, 3, 2, 1]
         ]
       };
 
@@ -353,7 +355,7 @@ md = {
           tension: 0
         }),
         low: 0,
-        high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+        high: 8, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
         chartPadding: {
           top: 0,
           right: 0,
@@ -371,10 +373,9 @@ md = {
       /* ----------==========     Emails Subscription Chart initialization    ==========---------- */
 
       var dataWebsiteViewsChart = {
-        labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
+        labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
         series: [
-          [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
-
+          [7, 3, 1, 4, 6, 1, 1]
         ]
       };
       var optionsWebsiteViewsChart = {
@@ -382,7 +383,7 @@ md = {
           showGrid: false
         },
         low: 0,
-        high: 1000,
+        high: 8,
         chartPadding: {
           top: 0,
           right: 5,

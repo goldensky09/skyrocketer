@@ -32,69 +32,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
-        Tip 2: you can also add an image using data-image tag
-    -->
-      <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
-        </a></div>
-      <div class="sidebar-wrapper">
-        <ul class="nav">
-          <li class="nav-item active  ">
-            <a class="nav-link" href="./dashboard.html">
-              <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./user.html">
-              <i class="material-icons">person</i>
-              <p>User Profile</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
-              <i class="material-icons">content_paste</i>
-              <p>Table List</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
-              <i class="material-icons">library_books</i>
-              <p>Typography</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
-              <i class="material-icons">bubble_chart</i>
-              <p>Icons</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
-              <i class="material-icons">location_ons</i>
-              <p>Maps</p>
-            </a>
-          </li>
-
-          <li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
-              <i class="material-icons">language</i>
-              <p>RTL Support</p>
-            </a>
-          </li>
-          <li class="nav-item active-pro ">
-            <a class="nav-link" href="./upgrade.html">
-              <i class="material-icons">unarchive</i>
-              <p>Upgrade to PRO</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <div dx-include-html="sidebar.html"></div>
     <div class="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
@@ -171,15 +109,14 @@ The above copyright notice and this permission notice shall be included in all c
                   <div class="card-icon">
                     <i class="material-icons">content_copy</i>
                   </div>
-                  <p class="card-category">Used Space</p>
-                  <h3 class="card-title">49/50
-                    <small>GB</small>
+                  <p class="card-category">My VMs</p>
+                  <h3 class="card-title">7
                   </h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons text-danger">warning</i>
-                    <a href="javascript:;">Get More Space...</a>
+                    <i class="material-icons text-info">add</i>
+                    <a href="javascript:;">Add New VM</a>
                   </div>
                 </div>
               </div>
@@ -190,12 +127,12 @@ The above copyright notice and this permission notice shall be included in all c
                   <div class="card-icon">
                     <i class="material-icons">store</i>
                   </div>
-                  <p class="card-category">Revenue</p>
-                  <h3 class="card-title">$34,245</h3>
+                  <p class="card-category">My Jobs</p>
+                  <h3 class="card-title">4</h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">date_range</i> Last 24 Hours
+                    <i class="material-icons text-success">info</i> Last Run - <strong>Sanity Check <span class="text-success">Successful</span> </strong>
                   </div>
                 </div>
               </div>
@@ -206,12 +143,12 @@ The above copyright notice and this permission notice shall be included in all c
                   <div class="card-icon">
                     <i class="material-icons">info_outline</i>
                   </div>
-                  <p class="card-category">Fixed Issues</p>
-                  <h3 class="card-title">75</h3>
+                  <p class="card-category">My User Journeys</p>
+                  <h3 class="card-title">Total 8 | <small class="text-success">Active 3</small></h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">local_offer</i> Tracked from Github
+                    <i class="material-icons">local_offer</i> <a href="javascropt:;">Add New User Journey</a>
                   </div>
                 </div>
               </div>
@@ -240,9 +177,9 @@ The above copyright notice and this permission notice shall be included in all c
                   <div class="ct-chart" id="dailySalesChart"></div>
                 </div>
                 <div class="card-body">
-                  <h4 class="card-title">Daily Sales</h4>
+                  <h4 class="card-title">VM Usage : <small>Top 3</small></h4>
                   <p class="card-category">
-                    <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>
+                    <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today's VM usage.</p>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
@@ -257,12 +194,12 @@ The above copyright notice and this permission notice shall be included in all c
                   <div class="ct-chart" id="websiteViewsChart"></div>
                 </div>
                 <div class="card-body">
-                  <h4 class="card-title">Email Subscriptions</h4>
-                  <p class="card-category">Last Campaign Performance</p>
+                  <h4 class="card-title">Jobs Usage</h4>
+                  <p class="card-category">Frequently used job : <strong>Sanity Check</strong> </p>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">access_time</i> campaign sent 2 days ago
+                    <i class="material-icons">access_time</i> Last run 2 hrs ago
                   </div>
                 </div>
               </div>
@@ -273,12 +210,12 @@ The above copyright notice and this permission notice shall be included in all c
                   <div class="ct-chart" id="completedTasksChart"></div>
                 </div>
                 <div class="card-body">
-                  <h4 class="card-title">Completed Tasks</h4>
-                  <p class="card-category">Last Campaign Performance</p>
+                  <h4 class="card-title">Journey Usage</h4>
+                  <p class="card-category">Frequently Used Journey : <strong>MsSQL All</strong></p>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">access_time</i> campaign sent 2 days ago
+                    <i class="material-icons">access_time</i> Last run 4 minutes ago
                   </div>
                 </div>
               </div>
@@ -287,32 +224,36 @@ The above copyright notice and this permission notice shall be included in all c
           <div class="row">
             <div class="col-lg-6 col-md-12">
               <div class="card">
-                <div class="card-header card-header-tabs card-header-primary">
+                <div class="card-header card-header-tabs card-header-primary" style="display:flex; justify-content:space-between;">
                   <div class="nav-tabs-navigation">
                     <div class="nav-tabs-wrapper">
-                      <span class="nav-tabs-title">Tasks:</span>
+                      <span class="nav-tabs-title">Jobs:</span>
                       <ul class="nav nav-tabs" data-tabs="tabs">
                         <li class="nav-item">
                           <a class="nav-link active" href="#profile" data-toggle="tab">
-                            <i class="material-icons">bug_report</i> Bugs
+                            <i class="material-icons">bug_report</i> Sanity check
                             <div class="ripple-container"></div>
                           </a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#messages" data-toggle="tab">
-                            <i class="material-icons">code</i> Website
+                            <i class="material-icons">code</i> Pre-commit
                             <div class="ripple-container"></div>
                           </a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#settings" data-toggle="tab">
-                            <i class="material-icons">cloud</i> Server
+                            <i class="material-icons">cloud</i> Post-commit
                             <div class="ripple-container"></div>
                           </a>
                         </li>
                       </ul>
                     </div>
                   </div>
+
+                  <button type="button" rel="tooltip" title="Execute" class="btn btn-success btn-sm">
+                    <i class="material-icons">play_arrow</i>
+                  </button>
                 </div>
                 <div class="card-body">
                   <div class="tab-content">
@@ -330,51 +271,11 @@ The above copyright notice and this permission notice shall be included in all c
                                 </label>
                               </div>
                             </td>
-                            <td>Sign contract for "What are conference organizers afraid of?"</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
+                            <td>Copyright Update
+                            <td class="td-actions text-right" style="justify-content:flex-end">
+                              <button type="button" rel="tooltip" title="Execute" class="btn btn-success btn-link btn-sm">
+                                <i class="material-icons">play_arrow</i>
                               </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                            </td>
-                            <td class="td-actions text-right">
                               <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">edit</i>
                               </button>
@@ -394,8 +295,60 @@ The above copyright notice and this permission notice shall be included in all c
                                 </label>
                               </div>
                             </td>
-                            <td>Create 4 Invisible User Experiences you Never Knew About</td>
-                            <td class="td-actions text-right">
+                            <td>Run Checkstyle (AngularJs)</td>
+                            <td class="td-actions text-right" style="justify-content:flex-end">
+                              <button type="button" rel="tooltip" title="Execute" class="btn btn-success btn-link btn-sm">
+                                <i class="material-icons">play_arrow</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="form-check">
+                                <label class="form-check-label">
+                                  <input class="form-check-input" type="checkbox" value="" checked>
+                                  <span class="form-check-sign">
+                                    <span class="check"></span>
+                                  </span>
+                                </label>
+                              </div>
+                            </td>
+                            <td>Run Lint Fix (Angular)
+                            </td>
+                            <td class="td-actions text-right" style="justify-content:flex-end">
+                              <button type="button" rel="tooltip" title="Execute" class="btn btn-success btn-link btn-sm">
+                                <i class="material-icons">play_arrow</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="form-check">
+                                <label class="form-check-label">
+                                  <input class="form-check-input" type="checkbox" value="" checked>
+                                  <span class="form-check-sign">
+                                    <span class="check"></span>
+                                  </span>
+                                </label>
+                              </div>
+                            </td>
+                            <td>Run Unit Tests</td>
+                            <td class="td-actions text-right" style="justify-content:flex-end">
+                              <button type="button" rel="tooltip" title="Execute" class="btn btn-success btn-link btn-sm">
+                                <i class="material-icons">play_arrow</i>
+                              </button>
                               <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">edit</i>
                               </button>
@@ -408,7 +361,7 @@ The above copyright notice and this permission notice shall be included in all c
                       </table>
                     </div>
                     <div class="tab-pane" id="messages">
-                      <table class="table">
+                      <!-- <table class="table">
                         <tbody>
                           <tr>
                             <td>
@@ -445,6 +398,83 @@ The above copyright notice and this permission notice shall be included in all c
                             </td>
                             <td>Sign contract for "What are conference organizers afraid of?"</td>
                             <td class="td-actions text-right">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table> -->
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="form-check">
+                                <label class="form-check-label">
+                                  <input class="form-check-input" type="checkbox" value="" checked>
+                                  <span class="form-check-sign">
+                                    <span class="check"></span>
+                                  </span>
+                                </label>
+                              </div>
+                            </td>
+                            <td>Copyright Update
+                            <td class="td-actions text-right" style="justify-content:flex-end">
+                              <button type="button" rel="tooltip" title="Execute" class="btn btn-success btn-link btn-sm">
+                                <i class="material-icons">play_arrow</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="form-check">
+                                <label class="form-check-label">
+                                  <input class="form-check-input" type="checkbox" value="" checked>
+                                  <span class="form-check-sign">
+                                    <span class="check"></span>
+                                  </span>
+                                </label>
+                              </div>
+                            </td>
+                            <td>UI Precommit</td>
+                            <td class="td-actions text-right" style="justify-content:flex-end">
+                              <button type="button" rel="tooltip" title="Execute" class="btn btn-success btn-link btn-sm">
+                                <i class="material-icons">play_arrow</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="form-check">
+                                <label class="form-check-label">
+                                  <input class="form-check-input" type="checkbox" value="" checked>
+                                  <span class="form-check-sign">
+                                    <span class="check"></span>
+                                  </span>
+                                </label>
+                              </div>
+                            </td>
+                            <td>Blackbox Sanity
+                            </td>
+                            <td class="td-actions text-right" style="justify-content:flex-end">
+                              <button type="button" rel="tooltip" title="Execute" class="btn btn-success btn-link btn-sm">
+                                <i class="material-icons">play_arrow</i>
+                              </button>
                               <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">edit</i>
                               </button>
@@ -533,41 +563,91 @@ The above copyright notice and this permission notice shall be included in all c
             <div class="col-lg-6 col-md-12">
               <div class="card">
                 <div class="card-header card-header-warning">
-                  <h4 class="card-title">Employees Stats</h4>
-                  <p class="card-category">New employees on 15th September, 2016</p>
+                  <h4 class="card-title">VMs</h4>
+                  <!-- <p class="card-category">New employees on 15th September, 2016</p> -->
                 </div>
                 <div class="card-body table-responsive">
                   <table class="table table-hover">
                     <thead class="text-warning">
-                      <th>ID</th>
-                      <th>Name</th>
-                      <th>Salary</th>
-                      <th>Country</th>
+                      <th>#</th>
+                      <th>VM Name</th>
+                      <th>Operating System</th>
+                      <th>Domain</th>
+                      <th>Status</th>
+                      <th style="text-align: center; padding-left: 38px">Actions</th>
                     </thead>
                     <tbody>
                       <tr>
                         <td>1</td>
-                        <td>Dakota Rice</td>
-                        <td>$36,738</td>
-                        <td>Niger</td>
+                        <td>jk-trunk</td>
+                        <td>Linux(Red Hat)</td>
+                        <td>Dcol1</td>
+                        <td>Running</td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="Stop VM" class="btn btn-success btn-link btn-sm">
+                            <i class="material-icons">pause</i>
+                          </button>
+                          <button type="button" rel="tooltip" title="Settings" class="btn btn-primary btn-link btn-sm">
+                            <i class="material-icons">settings</i>
+                          </button>
+                          <button type="button" rel="tooltip" title="Destroy" class="btn btn-danger btn-link btn-sm">
+                            <i class="material-icons">delete</i>
+                          </button>
+                        </td>
                       </tr>
                       <tr>
                         <td>2</td>
-                        <td>Minerva Hooper</td>
-                        <td>$23,789</td>
-                        <td>Curaçao</td>
+                        <td>vk-trunk</td>
+                        <td>Windows</td>
+                        <td>Dlpxdc</td>
+                        <td>Running</td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="Stop VM" class="btn btn-success btn-link btn-sm">
+                            <i class="material-icons">pause</i>
+                          </button>
+                          <button type="button" rel="tooltip" title="Settings" class="btn btn-primary btn-link btn-sm">
+                            <i class="material-icons">settings</i>
+                          </button>
+                          <button type="button" rel="tooltip" title="Destroy" class="btn btn-danger btn-link btn-sm">
+                            <i class="material-icons">delete</i>
+                          </button>
+                        </td>
                       </tr>
                       <tr>
                         <td>3</td>
-                        <td>Sage Rodriguez</td>
-                        <td>$56,142</td>
-                        <td>Netherlands</td>
+                        <td>sj-trunk</td>
+                        <td>Ubuntu</td>
+                        <td>Dcol2</td>
+                        <td>Stopped</td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="Start VM" class="btn btn-success btn-link btn-sm">
+                            <i class="material-icons">play_arrow</i>
+                          </button>
+                          <button type="button" rel="tooltip" title="Settings" class="btn btn-primary btn-link btn-sm">
+                            <i class="material-icons">settings</i>
+                          </button>
+                          <button type="button" rel="tooltip" title="Destroy" class="btn btn-danger btn-link btn-sm">
+                            <i class="material-icons">delete</i>
+                          </button>
+                        </td>
                       </tr>
                       <tr>
                         <td>4</td>
-                        <td>Philip Chaney</td>
-                        <td>$38,735</td>
-                        <td>Korea, South</td>
+                        <td>dj-trunk</td>
+                        <td>CentOS</td>
+                        <td>Dcol2</td>
+                        <td>Archived</td>
+                        <td class="td-actions text-right">
+                          <button type="button" rel="tooltip" title="Unarchive VM" class="btn btn-success btn-link btn-sm">
+                            <i class="material-icons">unarchive</i>
+                          </button>
+                          <button type="button" rel="tooltip" title="Settings" class="btn btn-primary btn-link btn-sm">
+                            <i class="material-icons">settings</i>
+                          </button>
+                          <button type="button" rel="tooltip" title="Destroy" class="btn btn-danger btn-link btn-sm">
+                            <i class="material-icons">delete</i>
+                          </button>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -582,18 +662,13 @@ The above copyright notice and this permission notice shall be included in all c
           <nav class="float-left">
             <ul>
               <li>
-                <a href="https://www.creative-tim.com">
-                  Creative Tim
-                </a>
-              </li>
-              <li>
                 <a href="https://creative-tim.com/presentation">
                   About Us
                 </a>
               </li>
               <li>
                 <a href="http://blog.creative-tim.com">
-                  Blog
+                  Contact Us
                 </a>
               </li>
               <li>
@@ -725,9 +800,11 @@ The above copyright notice and this permission notice shall be included in all c
   <script src="../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
+  <script src="../assets/js/includeHTML.js"></script>
   <script>
     $(document).ready(function() {
       $().ready(function() {
+        includeHTML();
         $sidebar = $('.sidebar');
 
         $sidebar_img_container = $sidebar.find('.sidebar-background');
