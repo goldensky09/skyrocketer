@@ -18,10 +18,24 @@ function includeHTML() {
             includeHTML();
           }
         }
-        xhttp.open("GET", file, true);
+        xhttp.open("GET", file, false);
         xhttp.send();
         /* Exit the function: */
         return;
       }
     }
   }
+
+  $(document).ready(function() {
+    $().ready(function() {
+      includeHTML();
+      var locations = [
+        'dashboard',
+        'tables',
+        'jobs'
+      ]
+      var activePath = document.location.pathname.split('/').pop().split('.')[0];
+      activeIndex = locations.indexOf(activePath);
+      $('.sidebar-wrapper .nav-item').removeClass('active').eq(activeIndex).addClass('active');
+    })
+  })

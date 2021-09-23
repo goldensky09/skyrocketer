@@ -115,20 +115,19 @@ The above copyright notice and this permission notice shall be included in all c
                   <div class="bs-vertical-wizard">
                     <ul>
                         <li class="current">
-                            <a href="#">Select VM <i class="ico fa fa-check ico-green"></i>
+                            <a href="#">Select VM <i class="ico fa fa-check ico-green hide"></i>
                                 <span class="desc">Use either existing VM or create new</span>
                             </a>
                         </li>
-
-                        <li class="locked">
+                        <li>
                           <!-- complete prev-step"> -->
-                            <a href="#">Create New VM <i class="ico fa fa-check ico-green"></i>
+                            <a href="#">Create New VM <i class="ico fa fa-check ico-green hide"></i>
                                 <span class="desc">Quickly create a VM.</span>
                             </a>
                         </li>
-                        <li class="locked">
-                            <a href="#">Select Operating System
-                                <span class="desc">Select OS you want the engine to be hosted on.</span>
+                        <li>
+                            <a href="#">Configure VM <i class="ico fa fa-check ico-green hide"></i>
+                                <span class="desc">Configure VM you want on the engine.</span>
                             </a>
                         </li>
                     </ul>
@@ -137,37 +136,28 @@ The above copyright notice and this permission notice shall be included in all c
               </div>
             </div>
             <div class="col-md-9">
-              <div class="card card-profile">
-                <div class="card-body">
-                  <div class="card card-plain">
-                    <div class="card-header card-header-primary">
-                      <h4 class="card-title mt-0"> Create New VM</h4>
-                      <p class="card-category"> Create a fresh VM quickly</p>
-                    </div>
-                    <div class="card-body">
-                      <div class="table-responsive">
-                        <button class="btn btn-success btn-round btn-lg">
-                          <i class="material-icons">settings</i> Create
-                        </button>
+              <div class="card card-profile" id="wizardContent">
+                <div class="card-header card-header-primary">
+                  <form class="navbar-form">
+                      <div class="col">
+                        <div class="input-group no-border">
+                          <input type="text" value="" class="form-control" placeholder="Search VM by name...">
+                          <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                            <i class="material-icons">search</i>
+                            <div class="ripple-container"></div>
+                          </button>
+                        </div>
                       </div>
-                    </div>
+                  </form>
+                  <div class="col text-right">
+                    <button class="btn btn-success createNewVM">
+                      <i class="material-icons">add</i>
+                    </button>
                   </div>
-                  <h2 class="card-category text-gray">OR</h2>
-                  <br>
-                  <br>
-                  <div class="card-header card-header-primary">
-                    <h4 class="card-title ">Use Existing VMs</h4>
-                    <p class="card-category"> Utilize the existing VMs available to you and save some cost to company :)</p>
-                    <form class="navbar-form">
-                      <div class="input-group no-border">
-                        <input type="text" value="" class="form-control" placeholder="Search...">
-                        <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                          <i class="material-icons">search</i>
-                          <div class="ripple-container"></div>
-                        </button>
-                      </div>
-                    </form>
-                  </div>
+                </div>
+                <br/>
+                <div id="loadingDiv" class="loader"></div>
+                <div id="cardBodyMain" class="card-body">
                   <div class="card-body">
                     <div class="table-responsive">
                       <table class="table">
@@ -203,7 +193,7 @@ The above copyright notice and this permission notice shall be included in all c
                               Dcol1
                             </td>
                             <td class="text-primary">
-                              <button type="button" class="btn btn-info">Use VM</button>
+                              <button type="button" class="btn btn-info useExistingVM">Use VM</button>
                             </td>
                           </tr>
                           <tr>
@@ -220,7 +210,7 @@ The above copyright notice and this permission notice shall be included in all c
                               Dlpxdc
                             </td>
                             <td class="text-primary">
-                              <button type="button" class="btn btn-info">Use VM</button>
+                              <button type="button" class="btn btn-info useExistingVM">Use VM</button>
                             </td>
                           </tr>
                           <tr>
@@ -237,7 +227,7 @@ The above copyright notice and this permission notice shall be included in all c
                               Dcol2
                             </td>
                             <td class="text-primary">
-                              <button type="button" class="btn btn-info">Use VM</button>
+                              <button type="button" class="btn btn-info useExistingVM">Use VM</button>
                             </td>
                           </tr>
                           <tr>
@@ -254,7 +244,7 @@ The above copyright notice and this permission notice shall be included in all c
                               Dcol1
                             </td>
                             <td class="text-primary">
-                              <button type="button" class="btn btn-info">Use VM</button>
+                              <button type="button" class="btn btn-info useExistingVM">Use VM</button>
                             </td>
                           </tr>
                         </tbody>
@@ -415,9 +405,12 @@ The above copyright notice and this permission notice shall be included in all c
   <script src="../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
+  <script src="../assets/js/includeHTML.js"></script>
   <script>
     $(document).ready(function() {
       $().ready(function() {
+        includeHTML();
+        $('#loadingDiv').hide();
         $sidebar = $('.sidebar');
 
         $sidebar_img_container = $sidebar.find('.sidebar-background');
@@ -583,73 +576,41 @@ The above copyright notice and this permission notice shall be included in all c
           }, 1000);
 
         });
+
+        function updateStepToMoveForward() {
+          $('.bs-vertical-wizard .current').find('.hide').removeClass('hide');
+          $('.bs-vertical-wizard .current').removeClass('current').addClass('complete');
+          $('.bs-vertical-wizard li.complete').last().next().addClass('current');
+        }
+
+        var $loading = $('#loadingDiv').hide();
+        var $loadingMain = $('#cardBodyMain');
+        $(document)
+          .ajaxStart(function () {
+            $loading.show();
+            $loadingMain.hide();
+          })
+          .ajaxStop(function () {
+            $loading.hide();
+            $loadingMain.show();
+          });
+
+          $('.createNewVM').click(function() {
+            updateStepToMoveForward();
+            $('#wizardContent').load('createVM.html');
+          });
+
+          $('.useExistingVM').click(function() {
+            updateStepToMoveForward();
+            updateStepToMoveForward();
+            $('#wizardContent').load('selectOs.html');
+          });
+
+          $('.nextSelectOS').click(function() {
+            updateStepToMoveForward();
+            $('#wizardContent').load('selectOs.html');
+          });
       });
-
-    // Step Wizard Code
-    var current_fs, next_fs, previous_fs; //fieldsets
-    var opacity;
-
-    $(".next").click(function(){
-
-    current_fs = $(this).parent();
-    next_fs = $(this).parent().next();
-
-    //Add Class Active
-    $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-
-    //show the next fieldset
-    next_fs.show();
-    //hide the current fieldset with style
-    current_fs.animate({opacity: 0}, {
-    step: function(now) {
-    // for making fielset appear animation
-    opacity = 1 - now;
-
-    current_fs.css({
-    'display': 'none',
-    'position': 'relative'
-    });
-    next_fs.css({'opacity': opacity});
-    },
-    duration: 600
-    });
-    });
-
-    $(".previous").click(function(){
-
-    current_fs = $(this).parent();
-    previous_fs = $(this).parent().prev();
-
-    //Remove class active
-    $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-
-    //show the previous fieldset
-    previous_fs.show();
-
-    //hide the current fieldset with style
-    current_fs.animate({opacity: 0}, {
-    step: function(now) {
-    // for making fielset appear animation
-    opacity = 1 - now;
-
-    current_fs.css({
-    'display': 'none',
-    'position': 'relative'
-    });
-    previous_fs.css({'opacity': opacity});
-    },
-    duration: 600
-    });
-    });
-
-    $('.radio-group .radio').click(function(){
-    $(this).parent().find('.radio').removeClass('selected');
-    $(this).addClass('selected');
-    });
-
-    $(".submit").click(function(){
-    return false;
-    })
     });
   </script>
 </body>
