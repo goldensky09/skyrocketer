@@ -31,7 +31,7 @@ function includeHTML() {
       includeHTML();
       var locations = [
         'dashboard',
-        'tables',
+        'engines',
         'jobs'
       ]
       var activePath = document.location.pathname.split('/').pop().split('.')[0];
