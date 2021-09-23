@@ -1,6 +1,5 @@
 <div class="card-body">
     <div class="card card-plain">
-        <form>
             <div class="form-group">
                 <label for="exampleFormControlSelect2">Select Operating System</label>
                 <select class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect2">
@@ -34,7 +33,7 @@
             </div>
             <div class="form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" value="">
+                    <input class="form-check-input" type="checkbox" value="" checked>
                     Add Environment
                     <span class="form-check-sign">
                         <span class="check"></span>
@@ -68,7 +67,13 @@
                     </span>
                 </label>
             </div>
-            <button id="nextSelectOS" class="btn btn-primary">Next</button>
-        </form>
+            <button class="btn btn-primary finalStep">Submit</button>
     </div>
 </div>
+
+<script>
+    $('.finalStep').click(function() {
+        updateStepToMoveForward();
+        $('#wizardContent').load('finalStep.html');
+    });
+</script>
